@@ -1,4 +1,4 @@
-FROM maven:3.9.0-openjdk-17 AS MAVEN_image
+FROM maven:3.9-openjdk-17 AS MAVEN_image
 RUN git clone https://github.com/hkhcoder/vprofile-project.git
 RUN cd vprofile-project && git checkout containers && mvn install
 
