@@ -3,6 +3,7 @@ services:
   vproweb:
     build:
       context: ./Docker-files/web
+    image: oppytms/vproweb
     ports:
       - "80:80"
     depends_on:
@@ -11,6 +12,7 @@ services:
   vproapp:
     build:
       context: ./Docker-files/app
+    image: oppytms/vproapp
     depends_on:
       - vprodb
       - vprocache01
@@ -19,6 +21,9 @@ services:
   vprodb:
     build:
       context: ./Docker-files/db
+    image: oppytms/vprodb
+    ports:
+      - "3306:3306"
     env_file:
       - ./.env
     environment:
