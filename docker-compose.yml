@@ -20,12 +20,12 @@ services:
     build:
       context: ./Docker-files/db
     env_file:
-      - Docker-files/.env
+      - ./.env
     environment:
-      - MYSQL_ROOT_PASSWORD=${ENV_MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${ENV_MYSQL_DATABASE}
-      - MYSQL_USER=${ENV_MYSQL_USER}
-      - MYSQL_PASSWORD=${ENV_MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
       - vprodb-data:/var/lib/mysql
 
